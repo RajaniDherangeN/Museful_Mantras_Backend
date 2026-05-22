@@ -30,7 +30,7 @@ public class WebConfig {
             public void addResourceHandlers(ResourceHandlerRegistry registry) {
                 // Serve static images at /Images/** URL path
                 registry.addResourceHandler("/image/**")
-                        .addResourceLocations("file:///" + IMAGE_UPLOAD_DIR)
+                        .addResourceLocations("classpath:/static/Images/")
                         .setCachePeriod(3600); // optional caching
             }
         };
