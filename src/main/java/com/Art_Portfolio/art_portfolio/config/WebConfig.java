@@ -18,7 +18,11 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:4200") // Angular dev server
+                        .allowedOrigins(
+                                "https://rajanidherangen.github.io",  // ← your GitHub Pages URL
+                                "http://localhost:4200"             // ← for local dev 
+                         )
+                        .allowedHeaders("*")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
             }
 
