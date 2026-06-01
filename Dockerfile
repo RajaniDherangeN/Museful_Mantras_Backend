@@ -1,11 +1,9 @@
-# Stage 1 - Build
 FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
-RUN jar tf target/*.jar | grep Images   # ← shows if images are in jar
+RUN jar tf target/*.jar | grep -i images
 
-# Stage 2 - Run
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
