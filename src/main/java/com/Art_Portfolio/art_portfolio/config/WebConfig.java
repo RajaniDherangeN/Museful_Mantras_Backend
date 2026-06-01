@@ -29,9 +29,9 @@ public class WebConfig {
             @Override
             public void addResourceHandlers(ResourceHandlerRegistry registry) {
                 // Serve static images at /Images/** URL path
-                registry.addResourceHandler("/image/**")
+                registry.addResourceHandler("/Images/**")
                         .addResourceLocations("classpath:/static/Images/")
-                        .setCachePeriod(3600); // optional caching
+                        .setCachePeriod(3600);
             }
         };
     }
